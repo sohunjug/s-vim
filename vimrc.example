@@ -13,11 +13,7 @@ let g:maplocalleader = ';'
 let g:python_host_prog = '/usr/local/var/pyenv/versions/2.7.16/bin/python'
 let g:python3_host_prog = '/usr/local/var/pyenv/versions/3.6.8/bin/python'
 
-if has('nvim')
-  let $VIM_ROOT = expand('$HOME/.vim')
-else
-  let $VIM_ROOT = expand('$HOME/.config/nvim')
-endif
+let $VIM_ROOT = expand('$HOME/.vim')
 
 let g:plug_path = expand('$HOME/.cache/vim/plugs')
 if !isdirectory(expand(g:plug_path))
@@ -46,11 +42,5 @@ let g:vimrc_homepage = 'https://sohunjug.com/'
 
 nmap <Leader>ai :AuthorInfoDetect<CR>
 
-if filereadable(expand("$VIM_ROOT/config/vimrc.plugins"))
-  source $VIM_ROOT/config/vimrc.plugins
-endif
-if filereadable(expand("$VIM_ROOT/config/vimrc.config"))
-  source $VIM_ROOT/config/vimrc.config
-endif
-
+execute 'source ' . s:config_dir . '/config/init.vim'
 
