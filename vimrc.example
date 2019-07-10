@@ -1,0 +1,57 @@
+"*****************************************************************************
+"" init
+"*****************************************************************************
+
+" Initialize:
+""Use 'Space' instead of '\'.
+" Use <Leader> in global plugin.
+let g:mapleader = "\<Space>"
+" Use <LocalLeader> in filetype plugin.
+let g:maplocalleader = ';'
+
+" Path to python interpreter for neovim
+let g:python_host_prog = '/usr/local/var/pyenv/versions/2.7.16/bin/python'
+let g:python3_host_prog = '/usr/local/var/pyenv/versions/3.6.8/bin/python'
+
+if has('nvim')
+  let $VIM_ROOT = expand('$HOME/.vim')
+else
+  let $VIM_ROOT = expand('$HOME/.config/nvim')
+endif
+
+if !isdirectory(expand(g:plugin_path))
+  call mkdir(expand(g:plugin_path), 'p')
+endif
+
+let g:plugin_path = expand('$HOME/.cache/vim/plugs')
+
+let g:vim_bootstrap_langs = "c,go,html,javascript,lua,python,typescript"
+
+if !exists('s:config_dir')
+  let s:config_dir = finddir('s-vim', g:plugin_path)
+endif
+if s:config_dir != '' || &runtimepath !~ '/s-vim'
+  if s:config_dir == '' && &runtimepath !~ '/s-vim'
+    let s:config_dir = expand(g:plugin_path) . '/repos/github.com/sohunjug/s-vim'
+    if !isdirectory(s:config_dir)
+      echomsg 'Download sohunjug s-vim config wait a moment'
+      execute '!git clone --depth=1 https://github.com/sohunjug/s-vim' s:config_dir
+    endif
+  endif
+  execute 'set runtimepath^=' . substitute(fnamemodify(s:config_dir, ':p'), '/$', '', '')
+endif
+
+let g:vimrc_author = 'sohunjug'
+let g:vimrc_email = 'sohunjug@gmail.com'
+let g:vimrc_homepage = 'https://sohunjug.com/'
+
+nmap <Leader>ai :AuthorInfoDetect<CR>
+
+if filereadable(expand("$VIM_ROOT/config/vimrc.plugins"))
+  source $VIM_ROOT/config/vimrc.plugins
+endif
+if filereadable(expand("$VIM_ROOT/config/vimrc.config"))
+  source $VIM_ROOT/config/vimrc.config
+endif
+
+
