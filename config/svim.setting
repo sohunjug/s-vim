@@ -96,7 +96,7 @@ set t_ti= t_te=
 
 
 " 鼠标暂不启用, 键盘党....
-set mouse-=a
+set mouse=a
 " 启用鼠标
 " set mouse=a
 " Hide the mouse cursor while typing
@@ -137,7 +137,7 @@ set showcmd
 set showmode
 
 " 在上下移动光标时，光标的上方或下方至少会保留显示的行数
-set scrolloff=7
+set scrolloff=10
 
 " set winwidth=79
 
@@ -200,11 +200,11 @@ set autoindent
 
 " tab相关变更
 " 设置Tab键的宽度        [等同的空格个数]
-set tabstop=4
+set tabstop=2
 " 每一次缩进对应的空格数
-set shiftwidth=4
+set shiftwidth=2
 " 按退格键时可以一次删掉 4 个空格
-set softtabstop=4
+set softtabstop=2
 " insert tabs on the start of a line according to shiftwidth, not tabstop 按退格键时可以一次删掉 4 个空格
 set smarttab
 " 将Tab自动转化成空格[需要输入真正的Tab键时，使用 Ctrl+V + Tab]
@@ -253,7 +253,7 @@ set encoding=utf-8
 " 自动判断编码时，依次尝试以下编码：
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set helplang=cn
-"set langmenu=zh_CN.UTF-8
+set langmenu=zh_CN.UTF-8
 "set enc=2byte-gb18030
 " 下面这句只影响普通模式 (非图形界面) 下的 Vim
 set termencoding=utf-8
@@ -629,9 +629,9 @@ set lazyredraw          " redraw only when we need to.
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    set guifont=Monaco:h14
+    set guifont=Monaco:h11
     if has("gui_gtk2")   "GTK2
-        set guifont=Monaco\ 12,Monospace\ 12
+        set guifont=Monaco\ 11,Monospace\ 11
     endif
     set guioptions-=T
     set guioptions+=e
@@ -650,8 +650,8 @@ endif
 set background=dark
 set t_Co=256
 
-colorscheme solarized
-" colorscheme molokai
+" colorscheme solarized
+colorscheme molokai
 
 
 " 设置标记一列的背景颜色和数字一行颜色一致
