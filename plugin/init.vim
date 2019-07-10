@@ -6,7 +6,7 @@ if !exists('g:plug_path')
   let g:plug_path = expand('$HOME/.cache/vim/plugs')
 endif
 
-let s:vimplug_exists = expand('$PLUG_DIR/plug.vim')
+let s:vimplug_exists = expand(g:plug_path . '/plug.vim')
 
 let g:vim_bootstrap_langs = "c,go,html,javascript,lua,python,typescript"
 let g:vim_bootstrap_editor = "nvim"				" nvim or vim
@@ -33,12 +33,12 @@ nmap <Leader>ai :AuthorInfoDetect<CR>
 
 source s:vimplug_exists
 
-let s:plugins = fnamemodify(expand('<sfile>'), ':h').'/plugins.vim'
+let s:plugins = fnamemodify(expand('<sfile>'), ':h').'/svim.plugins'
 if filereadable(expand(s:plugins))
   execute 'source' s:plugins
 endif
 
-let s:setting = fnamemodify(expand('<sfile>'), ':h').'/setting.vim'
+let s:setting = fnamemodify(expand('<sfile>'), ':h').'/svim.setting'
 if filereadable(expand(s:setting))
   execute 'source' s:setting
 endif

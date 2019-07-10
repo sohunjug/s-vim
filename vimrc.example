@@ -19,20 +19,19 @@ else
   let $VIM_ROOT = expand('$HOME/.config/nvim')
 endif
 
-if !isdirectory(expand(g:plugin_path))
-  call mkdir(expand(g:plugin_path), 'p')
+let g:plug_path = expand('$HOME/.cache/vim/plugs')
+if !isdirectory(expand(g:plug_path))
+  call mkdir(expand(g:plug_path), 'p')
 endif
-
-let g:plugin_path = expand('$HOME/.cache/vim/plugs')
 
 let g:vim_bootstrap_langs = "c,go,html,javascript,lua,python,typescript"
 
 if !exists('s:config_dir')
-  let s:config_dir = finddir('s-vim', g:plugin_path)
+  let s:config_dir = finddir('s-vim', g:plug_path)
 endif
 if s:config_dir != '' || &runtimepath !~ '/s-vim'
   if s:config_dir == '' && &runtimepath !~ '/s-vim'
-    let s:config_dir = expand(g:plugin_path) . '/repos/github.com/sohunjug/s-vim'
+    let s:config_dir = expand(g:plug_path) . '/s-vim'
     if !isdirectory(s:config_dir)
       echomsg 'Download sohunjug s-vim config wait a moment'
       execute '!git clone --depth=1 https://github.com/sohunjug/s-vim' s:config_dir
