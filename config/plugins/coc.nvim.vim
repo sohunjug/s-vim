@@ -229,8 +229,8 @@ if g:HasCocPlug('coc-bookmark')
 endif
 
 if g:HasCocPlug('coc-todolist')
-    nmap <silent> <leader>tl :<C-u>CocList todolist<cr>
-    nmap <silent> <leader>ta :<C-u>CocCommand todolist.create<cr>
+    nmap <silent> <leader>otl :<C-u>CocList todolist<cr>
+    nmap <silent> <leader>ota :<C-u>CocCommand todolist.create<cr>
 endif
 
 if g:HasCocPlug('coc-git')

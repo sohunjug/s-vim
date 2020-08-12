@@ -1,6 +1,6 @@
 
 set undofile
-set undodir=g:undo_dir
+set undodir=$HOME/.cache/vimundo
 if !exists('g:undotree_WindowLayout')
     let g:undotree_WindowLayout = 3
 endif
