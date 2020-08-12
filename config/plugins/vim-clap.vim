@@ -32,27 +32,27 @@ function! s:ClapGrep() abort
     endif
 endfunc
 
-nnoremap <M-f> :call <SID>ClapFiles()<CR>
+nnoremap <leader>pf :call <SID>ClapFiles()<CR>
 " nnoremap <M-F> :Clap files $HOME<CR>
-nnoremap <M-b> :Clap buffers<CR>
-nnoremap <M-c> :Clap command<CR>
-nnoremap <M-t> :Clap tags<CR>
-nnoremap <M-T> :Clap proj_tags<CR>
+nnoremap <leader>pb :Clap buffers<CR>
+nnoremap <leader>pc :Clap command<CR>
+nnoremap <leader>pt :Clap tags<CR>
+nnoremap <leader>pT :Clap proj_tags<CR>
 " 使用rg搜索工作目录
-nnoremap <M-s> :call <SID>ClapGrep()<CR>
+nnoremap <leader>ps :call <SID>ClapGrep()<CR>
 " 模糊搜索所有buffer
-nnoremap ? :Clap lines<CR>
-nnoremap <M-r> :Clap history<CR>
-nnoremap <M-m> :Clap marks<CR>
-nnoremap <M-M> :Clap maps<CR>
-nnoremap <M-w> :Clap windows<CR>
-nnoremap <M-y> :Clap yanks<CR>
-nnoremap <M-J> :Clap jumps<CR>
+nnoremap <leader>p? :Clap lines<CR>
+nnoremap <leader>pr :Clap history<CR>
+nnoremap <leader>pm :Clap marks<CR>
+nnoremap <leader>pM :Clap maps<CR>
+nnoremap <leader>pw :Clap windows<CR>
+nnoremap <leader>py :Clap yanks<CR>
+nnoremap <leader>pj :Clap jumps<CR>
 
-nnoremap <F8> :Clap quickfix<CR>
-nnoremap <F9> :Clap loclist<CR>
+nnoremap <leader>pq :Clap quickfix<CR>
+nnoremap <leader>pl :Clap loclist<CR>
 
-nnoremap <leader>gd :Clap git_diff_files<CR>
-nnoremap <leader>gf :Clap gfiles<CR>
-nnoremap <leader>gm :Clap bcommits<cr>
-nnoremap <leader>gM :Clap commits<cr>
+nnoremap <leader>ggd :Clap git_diff_files<CR>
+nnoremap <leader>ggf :Clap gfiles<CR>
+nnoremap <leader>ggm :Clap bcommits<cr>
+nnoremap <leader>ggM :Clap commits<cr>
