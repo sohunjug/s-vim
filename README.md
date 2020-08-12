@@ -1,4 +1,6 @@
-# vime
+# s-vim
+
+copy from [vime](https://github.com/fgheng/vime)
 
 ## 1. About
 
