@@ -3,7 +3,7 @@ if g:HasPlug('vista.vim')
   let g:vista_fzf_preview = ['right:40%']
   let g:vista_keep_fzf_colors = 1
   let g:vista_sidebar_position = 'vertical topleft'
-  let g:vista_echo_cursor_strategy = 'floating_win'
+  let g:vista_echo_cursor_strategy = 'echo'
 
   let g:vista_ctags_cmd = {
         \ 'haskell': 'hasktags -x -o - -c',

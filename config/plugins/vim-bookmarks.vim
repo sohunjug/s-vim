@@ -1,5 +1,5 @@
 " bookmark文件存储路径
-let g:bookmark_file = $HOME.'/.cache/vim/vim-bookmarks'
+let g:bookmark_file = $HOME.'/.cache/vim-bookmarks'
 
 let g:bookmark_sign = '♥'
 let g:bookmark_highlight_lines = 1

@@ -62,8 +62,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 " 显示清除尾部空格
 Plug 'ntpeters/vim-better-whitespace'
-" 代码段
-Plug 'honza/vim-snippets'
 " 快速选择窗口
 Plug 't9md/vim-choosewin',  { 'on': 'ChooseWin' }
 Plug 'elzr/vim-json', {'for': 'json'}
@@ -132,7 +130,7 @@ Plug 'lervag/vimtex', {'for': 'tex'}
 " 平滑滚动
 Plug 'psliwka/vim-smoothie'
 " 在命令行使用linux命令新建文件文件夹重命名当前buffer等
-Plug 'tpope/vim-eunuch', {'on': ['Mkdir', 'Rename', 'Unlink', 'Delete', 'Move', 'Chmod', 'Cfind', 'Clocate', 'Lfine', 'Llocate', 'SudoEdit', 'SudoWrite', 'Wall', 'W']}
+" Plug 'tpope/vim-eunuch', {'on': ['Mkdir', 'Rename', 'Unlink', 'Delete', 'Move', 'Chmod', 'Cfind', 'Clocate', 'Lfine', 'Llocate', 'SudoEdit', 'SudoWrite', 'Wall', 'W']}
 " 绘图插件
 Plug 'davinche/DrawIt', {'on': 'DrawIt'}
 " 最大化窗口，ctrl w o
@@ -147,7 +145,8 @@ Plug 'makerj/vim-pdf', {'for': 'pdf'}
 " plug 'skywind3000/asynctasks.vim', {'on': ['asynctask','asynctaskedit','asynctasklist','asynctaskmarco', 'asynctaskprofile']}
 " plug 'skywind3000/asyncrun.vim', {'on': ['asyncrun', 'asyncstop']}
 " 语法高亮包，使用treesitter代替
-Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'sheerun/vim-polyglot'
 " 总是匹配tag
 Plug 'valloric/MatchTagAlways', {'for': ['html', 'css', 'xml']}
 " 显示颜色
@@ -159,9 +158,21 @@ endif
 " 加强版的 go to file
 Plug 'tpope/vim-apathy'
 " 查看启动时间
-Plug 'dstein64/vim-startuptime', {'on':'StartupTime'}
+Plug 'dstein64/vim-startuptime'  " , {'on':'StartupTime'}
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo', 'for': 'markdown' }
       \ | Plug 'junegunn/limelight.vim', { 'on': 'Limelight' }
+" python高亮，异步
+if has('nvim')
+  Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins', 'for': 'python'}
+endif
+" 撤回
+Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
+Plug 'mbbill/undotree'
+" c++ 高亮
+Plug 'jackguo380/vim-lsp-cxx-highlight', {
+      \ 'for': [
+      \ 'cpp', 'c', 'cu', 'h', 'hpp', 'hh', 'objc', 'objcpp'
+      \ ]}
 
 " coc插件列表，可根据需要进行删减
 let g:coc_global_extensions = [

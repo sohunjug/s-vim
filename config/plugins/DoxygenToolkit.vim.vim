@@ -1,7 +1,7 @@
 let g:DoxygenToolkit_briefTag_pre="@brief:  "
 let g:DoxygenToolkit_paramTag_pre="@param   "
 let g:DoxygenToolkit_returnTag=   "@return  "
-let g:DoxygenToolkit_authorName="fgh"
-let g:DoxygenToolkit_companyName="bupt"
+let g:DoxygenToolkit_authorName="sohunjug"
+let g:DoxygenToolkit_companyName="vvmm"
 
-nmap <leader>d :Dox<cr>
+nmap <leader>dd :Dox<cr>

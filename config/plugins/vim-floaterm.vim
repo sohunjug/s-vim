@@ -5,9 +5,13 @@ let g:floaterm_rootmarkers=['.project', '.git', '.hg', '.svn', '.root', '.gitign
 let g:floaterm_autoinsert=v:true
 
 nmap <M-+> :FloatermNew<cr>
+nmap <leader>ttn :FloatermNew<cr>
 nmap <M-=> :FloatermToggle<cr>
+nmap <leader>ttt :FloatermToggle<cr>
 tnoremap <M-+> <c-\><c-n>:FloatermNew<cr>
+tnoremap <leader>ttn <c-\><c-n>:FloatermNew<cr>
 tnoremap <M-=> <c-\><c-n>:FloatermToggle<cr>
+tnoremap <leader>ttt <c-\><c-n>:FloatermToggle<cr>
 
 augroup my-floaterm
     autocmd!
