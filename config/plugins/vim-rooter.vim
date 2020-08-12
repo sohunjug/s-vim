@@ -1,4 +1,4 @@
 let g:rooter_cd_cmd = 'tcd'
 let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh', '.svn', 'compile_flags.txt', '.ccls']
 
-nnoremap <leader>kr <esc>:Rooter<CR>
+nnoremap <leader>ks <esc>:Rooter<CR>

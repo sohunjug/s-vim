@@ -3,8 +3,8 @@ let g:quickrun_no_default_key_mappings = 1
 " vmap <F4> :QuickRun<cr>
 " 需要增加函数，判断光标所在的窗口是否可以执行
 nmap <F4> <Plug>(quickrun)<cr>
-nmap <leader>r <Plug>(quickrun)
-vmap <leader>r <Plug>(quickrun)
+nmap <leader>kr <Plug>(quickrun)
+vmap <leader>kr <Plug>(quickrun)
 
 let g:quickrun_config = {
 	\   '_': {

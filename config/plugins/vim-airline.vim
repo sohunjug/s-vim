@@ -11,10 +11,10 @@ let g:airline#extensions#tabline#exclude_buffers = ["[defx]", "!", "vimfiler", "
 
 " 显示窗口号
 function! WindowNumber(...)
-	let builder = a:1
-	let context = a:2
-	call builder.add_section('airline_b', '%{tabpagewinnr(tabpagenr())}')
-	return 0
+  let builder = a:1
+  let context = a:2
+  call builder.add_section('airline_b', '%{tabpagewinnr(tabpagenr())}')
+  return 0
 endfunction
 
 call airline#add_statusline_func('WindowNumber')
@@ -23,15 +23,15 @@ call airline#add_inactive_statusline_func('WindowNumber')
 " 关闭airline的coc集成
 let g:airline#extensions#coc#enabled = 0
 if g:HasPlug('coc.nvim')
-	let g:airline_section_x = '%{coc#status()}'
+  let g:airline_section_x = '%{coc#status()}'
 endif
 
 if  g:airline#extensions#tabline#enabled == 1
-	nmap <M-h> <Plug>AirlineSelectPrevTab
-	nmap <M-l> <Plug>AirlineSelectNextTab
+  nmap <leader>bp <Plug>AirlineSelectPrevTab
+  nmap <leader>bn <Plug>AirlineSelectNextTab
 else
-    nnoremap  <M-l> :tabnext<cr>
-    nnoremap  <M-h> :tabprevious<CR>
-    tnoremap  <M-l> <c-\><c-n>:tabnext<cr>
-    tnoremap  <M-h> <c-\><c-n>:tabprevious<CR>
+  nnoremap  <leader>bn :tabnext<cr>
+  nnoremap  <leader>bp :tabprevious<CR>
+  tnoremap  <leader>bn <c-\><c-n>:tabnext<cr>
+  tnoremap  <leader>bp <c-\><c-n>:tabprevious<CR>
 endif

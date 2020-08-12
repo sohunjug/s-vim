@@ -1,1 +1,1 @@
-nnoremap  <c-w>o :ZoomWinTabToggle<cr>
+nnoremap  <leader>kz :ZoomWinTabToggle<cr>
