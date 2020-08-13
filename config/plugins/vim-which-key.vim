@@ -11,6 +11,7 @@ let g:which_key_map = { 'name' : 'sohunjug-Vim' ,
       \ '?' : 'FzfSearch' ,
       \ '.' : 'lcd .' }
 let g:which_key_map.b = { 'name' : '+Buffers',
+      \ 'a' : 'CloseAll' ,
       \ 'b' : 'List' ,
       \ 'f' : 'Format' ,
       \ 'n' : 'Next' ,

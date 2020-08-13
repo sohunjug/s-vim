@@ -128,6 +128,7 @@ Plug 'kristijanhusak/defx-git'
 " 关闭buffer而不关闭窗口
 " Plug 'rbgrouleff/bclose.vim', {'on': 'Bclose'}
 Plug 'moll/vim-bbye'
+Plug 'arithran/vim-delete-hidden-buffers'
 " latex插件
 Plug 'lervag/vimtex', {'for': 'tex'}
 " 平滑滚动
