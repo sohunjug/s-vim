@@ -126,7 +126,8 @@ endif
 Plug 'kristijanhusak/defx-icons'
 Plug 'kristijanhusak/defx-git'
 " 关闭buffer而不关闭窗口
-Plug 'rbgrouleff/bclose.vim', {'on': 'Bclose'}
+" Plug 'rbgrouleff/bclose.vim', {'on': 'Bclose'}
+Plug 'moll/vim-bbye'
 " latex插件
 Plug 'lervag/vimtex', {'for': 'tex'}
 " 平滑滚动
