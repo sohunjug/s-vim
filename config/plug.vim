@@ -6,8 +6,9 @@ Plug 'junegunn/fzf.vim'
 " Plug 'yuki-ycino/fzf-preview.vim', { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   " { 'do': {-> fzf#install()} }
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 Plug 'rhysd/git-messenger.vim'
+Plug 'lambdalisue/gina.vim'
 Plug 'antoinemadec/coc-fzf'
 " 注释插件
 Plug 'tyru/caw.vim'

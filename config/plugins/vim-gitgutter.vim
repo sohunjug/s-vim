@@ -7,7 +7,7 @@ let g:gitgutter_highlight_lines = 0
 " 开启行号高亮
 let g:gitgutter_highlight_linenrs = 1
 " 关闭默认快捷键
-let g:gitgutter_map_keys = 0
+let g:gitgutter_map_keys = 1
 " 折叠相关
 " set foldtext=gitgutter#fold#foldtext()
 " 文件更改数量超过500将会压缩显示
@@ -24,4 +24,7 @@ highlight link GitGutterChangeLineNr SignifySignChange
 highlight link GitGutterDeleteLineNr SignifySignDelete
 highlight link GitGutterChangeDeleteLineNr SignifySignDelete
 
-" nmap <leader>gf <esc>:GitGutterFold<cr>
+nmap [c <Plug>GitGutterPrevHunk
+nmap ]c <Plug>GitGutterNextHunk
+
+nmap <leader>gz <esc>:GitGutterFold<cr>

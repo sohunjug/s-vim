@@ -102,6 +102,10 @@ let g:which_key_map.g = { 'name' : '+Git',
       \ 'l' : 'Logs',
       \ 'c' : 'Commits',
       \ }
+let g:which_key_map.g.a = { 'name' : '+Add',
+      \ 'a' : 'All',
+      \ 'c' : 'Local',
+      \ }
 
 let g:which_key_localmap = { 'name' : '+LocalLeaderKey'  ,
       \ 'e'    : 'Defx',
