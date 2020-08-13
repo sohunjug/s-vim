@@ -1,2 +1,2 @@
 
-let g:syncfile_mapping = 1
+call syncfile#keymapping()

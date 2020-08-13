@@ -35,15 +35,15 @@ nnoremap <Leader>fvr <esc>:source $MYVIMRC<CR>
 command! -nargs=1 LoadScript exec 'source ' . g:config_root_path . '/' . '<args>'
 
 call plug#begin(g:plugins_path)
-  LoadScript plug.vim
+LoadScript plug.vim
 call plug#end()
 
 " 判断插件是否载入
 function! PlugLoaded(name)
   return (
-    \ has_key(g:plugs, a:name) &&
-    \ isdirectory(g:plugs[a:name].dir) &&
-    \ stridx(&rtp, g:plugs[a:name].dir) >= 0)
+        \ has_key(g:plugs, a:name) &&
+        \ isdirectory(g:plugs[a:name].dir) &&
+        \ stridx(&rtp, g:plugs[a:name].dir) >= 0)
 endfunction
 
 " 判断插件列表中是否含有某个插件
@@ -87,7 +87,7 @@ for s:plugin_name in g:plugs_order
   if g:HasInstall(s:plugin_name)
     let s:config_path = s:plugin_config_home . "/" . s:plugin_name . ".vim"
     if filereadable(s:config_path)
-        exec 'source' fnameescape(s:config_path)
+      exec 'source' fnameescape(s:config_path)
     endif
     let s:custom_config_load = 1
   endif
