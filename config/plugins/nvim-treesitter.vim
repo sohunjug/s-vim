@@ -3,7 +3,7 @@ require'nvim-treesitter.configs'.setup {
     -- 高亮配置
     highlight = {
         enable = true,                      -- false将禁用整个插件
-        disable = {},                       -- 不使用该插件的语言
+        disable = {"python"},                       -- 不使用该插件的语言
         custom_captures = {                 -- mapping of user defined captures to highlight groups
           -- ["foo.bar"] = "Identifier"     -- highlight own capture @foo.bar with highlight group "Identifier", see :h nvim-treesitter-query-extensions
         },
@@ -11,7 +11,7 @@ require'nvim-treesitter.configs'.setup {
     -- 颜色块选择，还不太会使用，暂时保留
     incremental_selection = {
         enable = true,
-        disable = {},
+        disable = {"python"},
         keymaps = {                       -- mappings for incremental selection (visual mappings)
           init_selection = 'gnn',         -- maps in normal mode to init the node/scope selection
           node_incremental = "grn",       -- increment to the upper named parent
@@ -25,7 +25,7 @@ require'nvim-treesitter.configs'.setup {
             enable = true
         },
         highlight_current_scope = { -- 高亮范围
-            enable = true
+            enable = false
         },
         smart_rename = { -- 智能重命名
             enable = false,
@@ -44,7 +44,7 @@ require'nvim-treesitter.configs'.setup {
     -- 文本块，可以快速操作一些函数块，比如代码块，类块等
     textobjects = { -- syntax-aware textobjects
         enable = true,
-        disable = {},
+        disable = {"python"},
         keymaps = {
             -- ["iL"] = { -- you can define your own textobjects directly here
             -- python = "(function_definition) @function",

@@ -7,6 +7,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   " { 'do': {-> fzf#install()} }
 Plug 'tpope/vim-fugitive'
+Plug 'rhysd/git-messenger.vim'
 Plug 'antoinemadec/coc-fzf'
 " 注释插件
 Plug 'tyru/caw.vim'
@@ -145,8 +146,13 @@ Plug 'makerj/vim-pdf', {'for': 'pdf'}
 " plug 'skywind3000/asynctasks.vim', {'on': ['asynctask','asynctaskedit','asynctasklist','asynctaskmarco', 'asynctaskprofile']}
 " plug 'skywind3000/asyncrun.vim', {'on': ['asyncrun', 'asyncstop']}
 " 语法高亮包，使用treesitter代替
-Plug 'nvim-treesitter/nvim-treesitter'
-" Plug 'sheerun/vim-polyglot'
+if has('nvim')
+  Plug 'nvim-treesitter/nvim-treesitter'
+else
+  Plug 'sheerun/vim-polyglot'
+endif
+
+Plug 'sohunjug/syncfile.vim'
 " 总是匹配tag
 Plug 'valloric/MatchTagAlways', {'for': ['html', 'css', 'xml']}
 " 显示颜色
@@ -166,7 +172,7 @@ if has('nvim')
   Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins', 'for': 'python'}
 endif
 " 撤回
-Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
+" Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
 Plug 'mbbill/undotree'
 " c++ 高亮
 Plug 'jackguo380/vim-lsp-cxx-highlight', {
@@ -195,7 +201,7 @@ let g:coc_global_extensions = [
       \ 'coc-word',
       \ 'coc-python',
       \ 'coc-rls',
-      \ 'coc-sql',
+      "\ 'coc-sql',
       \ 'coc-lua',
       \ 'coc-java',
       \ 'coc-fzf-preview',

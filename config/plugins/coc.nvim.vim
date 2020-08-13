@@ -331,13 +331,6 @@ if g:HasCocPlug('coc-highlight')
     call coc#config("highlight.disableLanguages", ["csv"])
 endif
 
-" coc-python
-if g:HasCocPlug('coc-python')
-    call coc#config("python.jediEnabled", v:true)
-    call coc#config("python.linting.enabled", v:true)
-    call coc#config("python.linting.pylintEnabled", v:true)
-endif
-
 " coc-rainbow-fart
 if g:HasCocPlug('coc-rainbow-fart')
     call coc#config("rainbow-fart.ffplay", "ffplay")
@@ -439,31 +432,41 @@ if g:HasCocPlug('coc-explorer')
 
 endif
 
-" call coc#config("languageserver", {
-"      \"ccls": {
-"      \  "enable": v:true,
-"      \  "command": "/usr/local/bin/ccls",
-"      \  "filetypes": ["rust", "python", "cpp", "c"],
-"      \  "rootPatterns": [".ccls", "compile_commands.json", "build/compile_commands.json", ".svn/", ".git/", "pyproject.toml", "packages.json"],
-"      \  "index": {
-"      \     "threads": 8
-"      \  },
-"      \  "initializationOptions": {
-"      \     "cache": {
-"      \       "directory": ".ccls-cache"
-"      \     },
-"      \     "compilationDatabaseDirectory": "build",
-"      \     "diagnostics": {
-"      \       "onChange": 5000,
-"      \     },
-"      \     "index": {
-"      \       "threads": 4,
-"      \     },
-"      \     "highlight": { "lsRanges" : v:true },
-"      \     "client": {
-"      \       "snippetSupport": v:true
-"      \     }
-"      \   },
-"      \}
-"      \})
+call coc#config("languageserver", {
+     \"ccls": {
+     \  "enable": v:true,
+     \  "command": "/usr/local/bin/ccls",
+     \  "filetypes": ["rust", "python"],
+     \  "rootPatterns": [".ccls", "compile_commands.json", "build/compile_commands.json", ".svn/", ".git/", "pyproject.toml", "packages.json"],
+     \  "index": {
+     \     "threads": 8
+     \  },
+     \  "initializationOptions": {
+     \     "cache": {
+     \       "directory": ".ccls-cache"
+     \     },
+     \     "compilationDatabaseDirectory": "build",
+     \     "diagnostics": {
+     \       "onChange": 5000,
+     \     },
+     \     "index": {
+     \       "threads": 4,
+     \     },
+     \     "highlight": { "lsRanges" : v:true },
+     \     "client": {
+     \       "snippetSupport": v:true
+     \     }
+     \   },
+     \}
+     \})
+
+" coc-python
+if g:HasCocPlug('coc-python')
+    call coc#config("python.jediEnabled", v:false)
+    call coc#config("python.linting.enabled", v:true)
+    call coc#config("python.linting.pylintEnabled", v:false)
+    call coc#config("python.linting.flake8Enabled", v:true)
+    call coc#config("python.venvPath", "~/.virtualenv")
+    " call coc#config("python.venvFolders", [".venv","venv","~/.virtualenv"])
+endif
 

@@ -53,7 +53,7 @@ if g:HasPlug('defx.nvim')
 
   " defx快捷键
   function! s:defx_custom_settings() abort
-    nnoremap <silent><buffer><expr> <2-LeftMouse>    defx#do_action('call', 'DefxSmartL')
+    nnoremap <silent><buffer><expr> <2-LeftMouse>    defx#do_action('call', 'DefxClick')
     nnoremap <silent><buffer><expr> N       defx#do_action('new_file')              " 新建文件/文件夹
     nnoremap <silent><buffer><expr> D       defx#do_action('remove')          " 删除
     nnoremap <silent><buffer><expr> Y       defx#do_action('copy')                  " 复制
@@ -102,6 +102,15 @@ if g:HasPlug('defx.nvim')
       "     exec s:beforWinnr . "wincmd w"
       "     exec 'e'. a:filepath
       " endif
+    endif
+  endfunction
+
+  function! DefxClick(_)
+    if defx#is_directory()
+      call defx#call_action('open_tree')
+      normal! j
+    else
+      call defx#call_action('drop')
     endif
   endfunction
 
