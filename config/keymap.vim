@@ -38,7 +38,7 @@ nnoremap <leader>= gg=G
 nnoremap <BackSpace> :nohl<cr>
 
 " 使用alt q执行宏录制功能
-nnoremap <leader>q q
+nnoremap <leader>qw :wq<cr>
 " jk表示esc
 inoremap jk <esc>
 
