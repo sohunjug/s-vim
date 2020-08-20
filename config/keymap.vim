@@ -52,7 +52,7 @@ else
 endif
 
 " 新建终端
-nnoremap <leader>tt :terminal<cr>
+nnoremap <leader>tta :terminal<cr>
 
 " 插入模式下的一些快捷键
 inoremap <M-o> <esc>o
@@ -110,3 +110,4 @@ function! s:SystemExecuteCurrentFile(f)
 endfunction
 " 使用系统应用打开当前buffer文件
 noremap <silent> <M-o> :call <SID>SystemExecuteCurrentFile(expand('%:p'))<cr>
+nnoremap <leader>. :lcd %:h<cr>

@@ -149,21 +149,21 @@ Plug 'makerj/vim-pdf', {'for': 'pdf'}
 " plug 'skywind3000/asynctasks.vim', {'on': ['asynctask','asynctaskedit','asynctasklist','asynctaskmarco', 'asynctaskprofile']}
 " plug 'skywind3000/asyncrun.vim', {'on': ['asyncrun', 'asyncstop']}
 " 语法高亮包，使用treesitter代替
-if has('nvim')
-  Plug 'nvim-treesitter/nvim-treesitter'
-else
+" if has('nvim')
+  " Plug 'nvim-treesitter/nvim-treesitter'
+" else
   Plug 'sheerun/vim-polyglot'
-endif
+" endif
 
 Plug 'sohunjug/syncfile.vim'
 " 总是匹配tag
 Plug 'valloric/MatchTagAlways', {'for': ['html', 'css', 'xml']}
 " 显示颜色
-if has('nvim')
-  Plug 'norcalli/nvim-colorizer.lua'
-else
+" if has('nvim')
+"   Plug 'norcalli/nvim-colorizer.lua'
+" else
   Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
-endif
+" endif
 " 加强版的 go to file
 Plug 'tpope/vim-apathy'
 " 查看启动时间
@@ -197,7 +197,7 @@ let g:coc_global_extensions = [
       \ 'coc-git',
       \ 'coc-cmake',
       \ 'coc-snippets',
-      \ 'coc-clangd',
+      "\ 'coc-clangd',
       \ 'coc-explorer',
       \ 'coc-json',
       \ 'coc-lists',

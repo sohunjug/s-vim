@@ -50,7 +50,7 @@ nmap <silent> <leader>ep <Plug>(coc-diagnostic-prev)
 " nmap <silent> gd :<c-u>call CocActionAsync('jumpDefinition')<cr>
 nmap <silent> gd <plug>(coc-definition)
 " 跳转到类型定义
-nmap <silent> gy <plug>(coc-type-definition)
+nmap <silent> gt <plug>(coc-type-definition)
 " 跳转到实现
 nmap <silent> gi <plug>(coc-implementation)
 " 跳转到引用
@@ -435,32 +435,32 @@ if g:HasCocPlug('coc-explorer')
 endif
 
 call coc#config("languageserver", {
-      \"ccls": {
-      \  "enable": v:true,
-      \  "command": "/usr/local/bin/ccls",
-      \  "filetypes": ["rust", "python"],
-      \  "rootPatterns": [".ccls", "compile_commands.json", "build/compile_commands.json", ".svn/", ".git/", "pyproject.toml", "packages.json"],
-      \  "index": {
-      \     "threads": 8
-      \  },
-      \  "initializationOptions": {
-      \     "cache": {
-      \       "directory": ".ccls-cache"
-      \     },
-      \     "compilationDatabaseDirectory": "build",
-      \     "diagnostics": {
-      \       "onChange": 5000,
-      \     },
-      \     "index": {
-      \       "threads": 4,
-      \     },
-      \     "highlight": { "lsRanges" : v:true },
-      \     "client": {
-      \       "snippetSupport": v:true
-      \     }
-      \   },
-      \}
-      \})
+    \"ccls": {
+    \  "enable": v:true,
+    \  "command": "/Users/sohunjug/.local/bin/ccls",
+    \  "filetypes": ["c", "cpp", "rust", "objc", "objcpp"],
+    \  "rootPatterns": [".ccls", "compile_commands.json", "build/compile_commands.json", ".svn/", ".git/"],
+    \  "index": {
+    \     "threads": 8
+    \  },
+    \  "initializationOptions": {
+    \     "cache": {
+    \       "directory": ".ccls-cache"
+    \     },
+    \     "compilationDatabaseDirectory": "build",
+    \     "diagnostics": {
+    \       "onChange": 5000,
+    \     },
+    \     "index": {
+    \       "threads": 4,
+    \     },
+    \     "highlight": { "lsRanges" : v:true },
+    \     "client": {
+    \       "snippetSupport": v:true
+    \     }
+    \   },
+    \}
+    \})
 
 " coc-python
 if g:HasCocPlug('coc-python')
@@ -468,7 +468,8 @@ if g:HasCocPlug('coc-python')
   call coc#config("python.linting.enabled", v:true)
   call coc#config("python.linting.pylintEnabled", v:false)
   call coc#config("python.linting.flake8Enabled", v:true)
-  call coc#config("python.venvPath", "~/.virtualenv")
+  call coc#config("python.venvPath", "~/.virtualenvs")
+  call coc#config("python.workspaceSymbols.rebuildOnStart", v:false)
   " call coc#config("python.venvFolders", [".venv","venv","~/.virtualenv"])
 endif
 
