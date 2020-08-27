@@ -18,8 +18,8 @@ else | let g:isWindows = v:false | endif
 if has("gui_running") | let g:isGUI = v:true | else | let g:isGUI = v:false | endif
 """
 " let $MACOSX_DEPLOYMENT_TARGET = ''
-let g:python_host_prog='/opt/local/bin/python2.7'
-let g:python3_host_prog='/opt/local/bin/python3.7'
+let g:python_host_prog='/usr/local/var/pyenv/versions/2.7.18/bin/python'
+let g:python3_host_prog='/usr/local/var/pyenv/versions/3.7.8/bin/python3'
 "
 " 插件配置文件所在路径
 let s:plugin_config_home = g:config_root_path . '/plugins'
