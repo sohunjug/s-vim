@@ -1,1 +1,1 @@
-let g:fmz_async=1
+let g:fmz_async=0
