@@ -127,8 +127,9 @@ Plug 'kristijanhusak/defx-icons'
 Plug 'kristijanhusak/defx-git'
 " 关闭buffer而不关闭窗口
 " Plug 'rbgrouleff/bclose.vim', {'on': 'Bclose'}
-Plug 'moll/vim-bbye'
-Plug 'arithran/vim-delete-hidden-buffers'
+" Plug 'moll/vim-bbye'
+Plug 'Asheq/close-buffers.vim'
+" Plug 'arithran/vim-delete-hidden-buffers'
 " latex插件
 Plug 'lervag/vimtex', {'for': 'tex'}
 " 平滑滚动
@@ -154,8 +155,9 @@ Plug 'makerj/vim-pdf', {'for': 'pdf'}
 " else
   Plug 'sheerun/vim-polyglot'
 " endif
-
+Plug 'mtdl9/vim-log-highlighting'
 Plug 'sohunjug/syncfile.vim'
+" Plug 'paroxayte/vwm.vim'
 " 总是匹配tag
 Plug 'valloric/MatchTagAlways', {'for': ['html', 'css', 'xml']}
 " 显示颜色

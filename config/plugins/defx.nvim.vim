@@ -251,6 +251,19 @@ if g:HasPlug('defx.nvim')
   let g:defx_icons_nested_opened_tree_icon = ''
   let g:defx_icons_nested_closed_tree_icon = ''
 
+  function! s:auto_quit()
+    " if g:HasPlug('vista.vim')
+    let l:c = 0
+    for i in range(1, bufnr('$'))
+      if empty(bufname(i)) || stridx(bufname(i), 'vista') > -1 || stridx(bufname(i), '[defx]') > -1
+        continue
+      endif
+      let l:c = 1
+    endfor
+    return l:c
+    " endif
+  endfunction
+
   augroup user_plugin_defx
     autocmd!
 
@@ -258,7 +271,9 @@ if g:HasPlug('defx.nvim')
     " autocmd DirChanged * call s:defx_refresh_cwd(v:event)
 
     " Delete defx if it's the only buffer left in the window
-    autocmd WinEnter * if &filetype == 'defx' && winnr('$') == 1 | q | endif
+    " autocmd WinEnter * if !g:HasPlug('vista.vim') && &filetype == 'defx' && winnr('$') == 1 | q | endif
+    autocmd WinEnter * if (&filetype == 'defx' || &filetype == 'vista') && s:auto_quit() == 1 | qa | endif
+    " autocmd BufWipeout * if g:HasPlug('vista.vim') && len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val) && bufname(v:val) != "__vista" && bufname(v:val) != "[defx] defx-0"')) == 1 | quit | endif
 
     " Move focus to the next window if current buffer is defx
     autocmd TabLeave * if &filetype == 'defx' | wincmd w | endif

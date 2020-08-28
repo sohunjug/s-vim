@@ -10,7 +10,9 @@ if g:HasPlug('vista.vim')
         \ }
   " let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
   let g:vista#renderer#enable_icon = 1
-  let g:vista_fold_toggle_icons = ['▼', '▶']
+  " let g:vista_fold_toggle_icons = ['▼', '▶']
+  let g:vista_echo_cursor = 1
+  let g:vista#renderer#default#vlnum_offset = 3
   "let g:vista_default_executive = 'ctags'
   let g:vista#renderer#icons = {
         \   "function": "\uf794",
@@ -18,21 +20,30 @@ if g:HasPlug('vista.vim')
         \  }
 
   let g:vista_executive_for = {
-      \ 'c': 'coc',
-      \ 'cpp': 'coc',
-      \ 'python': 'coc',
+      \ 'c': 'ctags',
+      \ 'cpp': 'ctags',
+      \ 'python': 'ctags',
       \ 'php': 'coc',
+      \ 'rust': 'coc',
+      \ 'go': 'coc',
       \ 'vimwiki': 'markdown',
       \ 'pandoc': 'markdown',
       \ 'markdown': 'toc',
       \ }
 
-  let g:vista_finder_alternative_executives = ['clap']
+  let g:vista_finder_alternative_executives = ['coc']
+  let g:vista#executives = ['coc', 'ctags']
   let g:vista_ignore_kinds = ["zsh"]
   " autocmd FileType vista,vista_kind nnoremap <buffer> <silent>/ :<c-u>call vista#finder#fzf#Run()<CR>
   " autocmd FileType vista,vista_kind nnoremap <buffer> <silent>/ <esc>:Vista finder clap<CR>
 
   nnoremap <leader>ta <esc>:Vista!!<CR>
+
+  augroup user_plugin_vista
+    autocmd!
+    autocmd TabLeave * if &filetype == 'vista' | wincmd w | endif
+    autocmd WinEnter * if &filetype == 'vista' && winnr('$') == 1 | q | endif
+  augroup END
 
   autocmd FileType vista,vista_kind setlocal nobuflisted
 
