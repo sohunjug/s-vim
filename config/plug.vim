@@ -177,7 +177,7 @@ endif
 " 撤回
 " Plug 'simnalamburt/vim-mundo', {'on': 'MundoToggle'}
 Plug 'mbbill/undotree'
-Plug 'sohunjug/VimFMZ'
+Plug 'fmzquant/VimFMZ'
 " c++ 高亮
 Plug 'jackguo380/vim-lsp-cxx-highlight', {
       \ 'for': [
