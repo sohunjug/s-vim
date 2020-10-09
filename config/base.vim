@@ -40,7 +40,8 @@ set nobackup                                                " coc
 set nowritebackup                                           " coc
 set shortmess+=c                                            " coc
 set signcolumn=yes                                          " coc
-set sessionoptions+=globals                                 " coc
+" set sessionoptions+=globals                                 " coc
+set sessionoptions=blank,curdir,folds,help,tabpages,winpos
 set noswapfile
 set autoread                                                " 文件在外部被修改过，重新读入
 set autowrite                                               " 自动写回
@@ -52,7 +53,7 @@ set ttimeoutlen=10
 set updatetime=100                                  " 更新时间100ms 默认4000ms 写入swap的时间
 set shortmess+=c
 
-set mouse=n                                         " 允许使用鼠标, normal生效，a则是全模式生效
+set mouse=a                                         " 允许使用鼠标, normal生效，a则是全模式生效
 set cmdheight=1
 set conceallevel=0                                  " json文件不显示引号
 set laststatus=2                                    " 状态栏, lightline中更改了

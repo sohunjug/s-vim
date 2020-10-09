@@ -1,5 +1,5 @@
 
-nnoremap <leader>bd <esc>:Bdelete this<CR>
+" nnoremap <leader>bd <esc>:Bdelete this<CR>
 nnoremap <leader>ba <esc>:Bdelete all<CR>
 nnoremap <leader>bo <esc>:Bdelete other<CR>
 nnoremap <leader>bi <esc>:Bdelete hidden<CR>

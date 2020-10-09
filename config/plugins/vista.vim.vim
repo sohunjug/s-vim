@@ -4,6 +4,7 @@ if g:HasPlug('vista.vim')
   let g:vista_keep_fzf_colors = 1
   let g:vista_sidebar_position = 'vertical topleft'
   let g:vista_echo_cursor_strategy = 'echo'
+  " let g:vista_update_on_text_changed = 1
 
   let g:vista_ctags_cmd = {
         \ 'haskell': 'hasktags -x -o - -c',
@@ -21,11 +22,12 @@ if g:HasPlug('vista.vim')
 
   let g:vista_executive_for = {
       \ 'c': 'ctags',
-      \ 'cpp': 'ctags',
+      \ 'cpp': 'coc',
       \ 'python': 'ctags',
       \ 'php': 'coc',
-      \ 'rust': 'coc',
+      \ 'rust': 'ctags',
       \ 'go': 'coc',
+      \ 'lua': 'coc',
       \ 'vimwiki': 'markdown',
       \ 'pandoc': 'markdown',
       \ 'markdown': 'toc',
@@ -45,7 +47,7 @@ if g:HasPlug('vista.vim')
     autocmd WinEnter * if &filetype == 'vista' && winnr('$') == 1 | q | endif
   augroup END
 
-  autocmd FileType vista,vista_kind setlocal nobuflisted
+  autocmd FileType vista setlocal nobuflisted noswapfile nowrap
 
   function! NearestMethodOrFunction() abort
     return get(b:, 'vista_nearest_method_or_function', '')

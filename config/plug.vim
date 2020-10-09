@@ -1,5 +1,6 @@
 " 代码补全插件
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 " 检索
 Plug 'liuchengxu/vim-clap'
 Plug 'junegunn/fzf.vim'
@@ -10,6 +11,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }   " { 'do': {-
 Plug 'rhysd/git-messenger.vim'
 Plug 'lambdalisue/gina.vim'
 Plug 'antoinemadec/coc-fzf'
+" Plug 'tacahiroy/ctrlp-funky'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'thaerkh/vim-workspace'
 " 注释插件
 Plug 'tyru/caw.vim'
 " 生成注释文档
@@ -57,7 +61,7 @@ Plug 'jacoborus/tender.vim'
 " 函数列表
 Plug 'liuchengxu/vista.vim'    ", {'on': ['Vista!!', 'Vista']}
 " 自动补全括号
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 " 快速包围
 Plug 'tpope/vim-surround'
 " 重复上次的动作
@@ -126,7 +130,7 @@ endif
 Plug 'kristijanhusak/defx-icons'
 Plug 'kristijanhusak/defx-git'
 " 关闭buffer而不关闭窗口
-" Plug 'rbgrouleff/bclose.vim', {'on': 'Bclose'}
+Plug 'rbgrouleff/bclose.vim'  ", {'on': 'Bclose'}
 " Plug 'moll/vim-bbye'
 Plug 'Asheq/close-buffers.vim'
 " Plug 'arithran/vim-delete-hidden-buffers'
@@ -153,7 +157,7 @@ Plug 'makerj/vim-pdf', {'for': 'pdf'}
 " if has('nvim')
   " Plug 'nvim-treesitter/nvim-treesitter'
 " else
-  Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 " endif
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'sohunjug/syncfile.vim'
@@ -200,13 +204,15 @@ let g:coc_global_extensions = [
       \ 'coc-git',
       \ 'coc-cmake',
       \ 'coc-snippets',
+      \ 'coc-pairs',
       "\ 'coc-clangd',
       \ 'coc-explorer',
       \ 'coc-json',
       \ 'coc-lists',
       \ 'coc-word',
+      \ 'coc-rust-analyzer',
       \ 'coc-python',
-      \ 'coc-rls',
+      "\ 'coc-rls',
       \ 'coc-markmap',
       "\ 'coc-sql',
       \ 'coc-lua',

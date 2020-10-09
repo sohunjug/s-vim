@@ -1,6 +1,5 @@
 " 懒人包，需要配置的，点进对应的高亮插件然后查看他的配置进行配置
 " 不使用的文件，polyglot与vimtex冲突
-let g:polyglot_disabled = ['latex']
 
 let g:cpp_member_variable_highlight = 1
 let g:cpp_posix_standard = 1

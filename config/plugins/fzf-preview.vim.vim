@@ -36,6 +36,7 @@ command! -bang -nargs=? -complete=dir FWW call s:FilesWithWiki(<q-args>, <bang>0
 
 nnoremap <leader>ff :<c-u>FWW<CR>
 nnoremap <leader>fh :<c-u>FWW $HOME<CR>
+nnoremap <leader>fs :<c-u>FWW $HOME/Code<CR>
 nnoremap <leader>bb :<c-u>FzfPreviewAllBuffers<CR>
 if g:HasPlug('vista.vim')
     nnoremap <leader>tf :<c-u>FzfPreviewVistaBufferCtags<CR>

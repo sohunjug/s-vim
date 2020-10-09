@@ -28,8 +28,8 @@ vnoremap Q <esc>:close<cr>
 nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
 nnoremap <leader>br :b#<CR>
-" nnoremap <leader>bd :Bclose<CR>
-" nnoremap <leader>bD :Bclose!<CR>
+nnoremap <leader>bd :Bclose<CR>
+nnoremap <leader>bD :Bclose!<CR>
 
 " 格式化
 nnoremap <leader>= gg=G

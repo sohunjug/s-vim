@@ -16,16 +16,20 @@ let g:startify_custom_header = [
 
 let g:startify_files_number = 6
 let g:startify_dir_number = 6
+let g:startify_change_to_dir = 1
 
 " session
 let g:startify_session_persistence    = 1
+let g:startify_session_delete_buffers = 0
 let g:startify_session_dir = g:session_dir
+let g:startify_session_sort = 1
+" let g:startify_session_autoload = 1
 
 " bookmarks 书签
 let g:startify_bookmarks = [
-            \ '~/Documents/wiki/草稿/todo.md',
-            \ '~/Documents/wiki/草稿/快速笔记.md',
-            \ '~/.dotfiles/nvim/config/plug.vim'
+            \ '~/Code/wiki/草稿/todo.md',
+            \ '~/Code/wiki/草稿/快速笔记.md',
+            \ '~/Code/dotfiles/.vim/config/plug.vim'
             \ ]
 
 " command 命令
@@ -43,6 +47,20 @@ let g:startify_lists = [
        \ { 'type': 'dir',       'header': ['        MRU '. getcwd()] },
        \ { 'type': 'commands',  'header': ['        Commands']       },
        \ ]
+
+let g:startify_skiplist = [
+       \ '\.vimgolf',
+       \ '^/tmp',
+       \ '^/Library',
+       \ '^/Users/sohunjug/Library',
+       \ '/project/.*/documentation',
+       \ ]
+
+let g:startify_session_before_save = [
+        \ 'echo "Cleaning up before saving.."',
+        \ 'silent! Vista!',
+        \ 'silent! Defx -close!'
+        \ ]
 
 " 打开buffer也显示startify
 " autocmd BufEnter *

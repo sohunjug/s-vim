@@ -6,6 +6,13 @@ let g:neoformat_python_black = {
       \ 'args': ['-q', '-'],
       \ }
 
+let g:neoformat_enabled_lua = ['luafmt']
+let g:neoformat_lua_luafmt = {
+      \ 'exe': '/usr/local/bin/luafmt',
+      \ 'stdin': 1,
+      \ 'args': ['-l', '140', '-i', '2', '--stdin'],
+      \ }
+
 let g:neoformat_enabled_toml = ['prettier']
 
 let g:neoformat_cpp_clangformat = {

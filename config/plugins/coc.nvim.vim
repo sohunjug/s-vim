@@ -177,6 +177,7 @@ if !has('nvim') || !g:HasPlug('fzf.vim') && !g:HasPlug('LeaderF') && !g:HasPlug(
   if g:HasCocPlug('coc-lists')
     nnoremap <silent> <leader>fw :call CocListFilesWithWiki("")<CR>
     nnoremap <silent> <leader>fh :call CocListFilesWithWiki($HOME)<CR>
+    nnoremap <silent> <leader>fs :call CocListFilesWithWiki($HOME/Code)<CR>
     nnoremap <silent> <leader>bb :CocList buffers<CR>
     nnoremap <silent> <leader>fvc :CocList vimcommands<CR>
     " tags, 需要先generate tags
@@ -273,7 +274,7 @@ if g:HasCocPlug("coc-lists")
   call coc#config('list.source.words.defaultArgs', ['-e'])
   call coc#config('list.source.files.command', 'rg')
   call coc#config('list.source.files.args', ['--files'])
-  call coc#config('list.source.files.excludePatterns', ['.git'])
+  call coc#config('list.source.files.excludePatterns', ['.git', '.svn', '.ccls-cache'])
 endif
 
 " coc-clangd
@@ -294,7 +295,7 @@ endif
 
 " coc-prettier
 if g:HasCocPlug('coc-prettier')
-  call coc#config('prettier.tabWidth', 4)
+  call coc#config('prettier.tabWidth', 2)
 endif
 
 " coc-git
@@ -438,7 +439,7 @@ call coc#config("languageserver", {
     \"ccls": {
     \  "enable": v:true,
     \  "command": "/Users/sohunjug/.local/bin/ccls",
-    \  "filetypes": ["c", "cpp", "rust", "objc", "objcpp"],
+    \  "filetypes": ["c", "cpp", "objc", "objcpp"],
     \  "rootPatterns": [".ccls", "compile_commands.json", "build/compile_commands.json", ".svn/", ".git/"],
     \  "index": {
     \     "threads": 8
@@ -469,7 +470,10 @@ if g:HasCocPlug('coc-python')
   call coc#config("python.linting.pylintEnabled", v:false)
   call coc#config("python.linting.flake8Enabled", v:true)
   call coc#config("python.venvPath", "~/.virtualenvs")
-  call coc#config("python.workspaceSymbols.rebuildOnStart", v:false)
-  " call coc#config("python.venvFolders", [".venv","venv","~/.virtualenv"])
+  call coc#config("python.formatting.provider", "black")
+  call coc#config("python.linting.mypyEnabled", v:true)
+  call coc#config("python.workspaceSymbols.rebuildOnStart", v:true)
+  call coc#config("python.workspaceSymbols.rebuildOnFileSave", v:true)
+  call coc#config("python.venvFolders", [".venv","venv", "envs", ".envs"])
 endif
 

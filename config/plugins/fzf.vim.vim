@@ -353,6 +353,7 @@ command! -bang -nargs=? -complete=dir FzfGitStatus
 " 自定义快捷键
 nnoremap <leader>ff :FWW<CR>
 nnoremap <leader>fh :FWW $HOME<CR>
+nnoremap <leader>fs :FWW $HOME/Code<CR>
 nnoremap <leader>fvg :FWW $HOME/.vim<CR>
 nnoremap <leader>bb :Buffers<CR>
 if g:HasPlug('vista.vim')

@@ -18,8 +18,8 @@ else | let g:isWindows = v:false | endif
 if has("gui_running") | let g:isGUI = v:true | else | let g:isGUI = v:false | endif
 """
 " let $MACOSX_DEPLOYMENT_TARGET = ''
-let g:python_host_prog='/usr/local/var/pyenv/versions/2.7.18/bin/python'
-let g:python3_host_prog='/usr/local/var/pyenv/versions/3.7.8/bin/python3'
+" let g:python_host_prog='/usr/local/var/pyenv/versions/2.7.18/bin/python'
+let g:python3_host_prog='/Users/sohunjug/.asdf/installs/python/3.7.9/bin/python'
 "
 " 插件配置文件所在路径
 let s:plugin_config_home = g:config_root_path . '/plugins'
@@ -35,6 +35,8 @@ nnoremap <Leader>fve <esc>:e $MYVIMRC<CR>
 nnoremap <Leader>fvr <esc>:source $MYVIMRC<CR>
 " 定义载入配置命令
 command! -nargs=1 LoadScript exec 'source ' . g:config_root_path . '/' . '<args>'
+
+let g:polyglot_disabled = ['latex','python']
 
 call plug#begin(g:plugins_path)
 LoadScript plug.vim
