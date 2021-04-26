@@ -21,11 +21,11 @@ if g:HasPlug('vista.vim')
         \  }
 
   let g:vista_executive_for = {
-      \ 'c': 'ctags',
+      \ 'c': 'coc',
       \ 'cpp': 'coc',
-      \ 'python': 'ctags',
+      \ 'python': 'coc',
       \ 'php': 'coc',
-      \ 'rust': 'ctags',
+      \ 'rust': 'coc',
       \ 'go': 'coc',
       \ 'lua': 'coc',
       \ 'vimwiki': 'markdown',

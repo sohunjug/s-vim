@@ -32,7 +32,7 @@
     "variable": ""
   },
 
-  "diagnostic.signOffset": 9999,
+  /* "diagnostic.signOffset": 9999, */
   "diagnostic.errorSign": "■",
   "diagnostic.warningSign": "■",
   "diagnostic.infoSign": "●",
@@ -40,5 +40,10 @@
   "diagnostic.displayByAle": false,
   "diagnostic.maxWindowHeight": 10,
 
-  "languageserver": {}
+  "languageserver": {},
+  "python.venvPath": "~/.virtualenvs",
+  "python.condaPath": "/usr/local/Caskroom/miniconda/base/",
+  "python.linting.flake8Enabled": false,
+  "python.linting.mypyEnabled": true,
+  "python.linting.enabled": true
 }

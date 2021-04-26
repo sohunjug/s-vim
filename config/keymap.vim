@@ -39,6 +39,7 @@ nnoremap <BackSpace> :nohl<cr>
 
 " 使用alt q执行宏录制功能
 nnoremap <leader>qw :wq<cr>
+nnoremap <leader>ww :w<cr>
 " jk表示esc
 inoremap jk <esc>
 

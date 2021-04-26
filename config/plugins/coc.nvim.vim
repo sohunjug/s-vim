@@ -209,7 +209,9 @@ if g:HasCocPlug('coc-yank')
     nnoremap <silent> <leader>fy  :<C-u>CocList yank<cr>
   endif
   call coc#config('yank.highlight.duration', 200)
-  call coc#config('yank.enableCompletion', v:false)
+  call coc#config('coc.source.around.enable', v:false)
+  call coc#config('coc.source.buffer.enable', v:false)
+  call coc#config('yank.enableCompletion', v:true)
 endif
 
 if g:HasCocPlug('coc-translator')
@@ -290,7 +292,7 @@ endif
 
 " coc-xml
 if g:HasCocPlug('coc-xml')
-  call coc#config('xml.java.home', '/usr/lib/jvm/default/')
+  call coc#config('xml.java.home', '/Library/Java/JavaVirtualMachines/adoptopenjdk-15.jdk/Contents/Home/')
 endif
 
 " coc-prettier
@@ -386,7 +388,7 @@ if g:HasCocPlug('coc-explorer')
   " call coc#config("explorer.file.autoReveal", v:true)
   " call coc#config("explorer.keyMappingMode", "none")
   " "\ 'a': v:false,
-  call coc#config("explorer.keyMappings", {
+  call coc#config("explorer.keyMappings.global", {
         \ 'k': 'nodePrev',
         \ 'j': 'nodeNext',
         \ 'h': 'collapse',
@@ -439,7 +441,7 @@ call coc#config("languageserver", {
     \"ccls": {
     \  "enable": v:true,
     \  "command": "/Users/sohunjug/.local/bin/ccls",
-    \  "filetypes": ["c", "cpp", "objc", "objcpp"],
+    \  "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
     \  "rootPatterns": [".ccls", "compile_commands.json", "build/compile_commands.json", ".svn/", ".git/"],
     \  "index": {
     \     "threads": 8
@@ -460,9 +462,40 @@ call coc#config("languageserver", {
     \       "snippetSupport": v:true
     \     }
     \   },
-    \}
+    \},
+    \"golang": {
+    \  "command": "gopls",
+    \  "rootPatterns": ["go.mod"],
+    \  "filetypes": ["go"],
+    \  "initializationOptions": {
+    \     "usePlaceholders": v:true
+    \  }
+    \},
+    \"lua": {
+    \	"command": "lua-lsp",
+    \	"filetypes": ["lua"]
+    \},
+    \"swift": {
+    \	"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp",
+    \	"args": [],
+    \	"filetypes": ["swift"],
+    \	"initializationOptions": {},
+    \	"settings": {}
+    \},
+    \"bash": {
+    \	"command": "bash-language-server",
+    \	"args": ["start"],
+    \	"filetypes": ["sh", "zsh"],
+    \	"ignoredRootPaths": []
+    \},
     \})
 
+if g:HasCocPlug('coc-pyright')
+  call coc#config("pyright.disableSelfClsNotAccessed", v:true)
+  call coc#config("python.venvPath", "~/.virtualenvs")
+  call coc#config("python.formatting.provider", "black")
+  call coc#config("python.venvFolders", [".venv","venv", "envs", ".envs"])
+endif
 " coc-python
 if g:HasCocPlug('coc-python')
   call coc#config("python.jediEnabled", v:false)
@@ -477,3 +510,27 @@ if g:HasCocPlug('coc-python')
   call coc#config("python.venvFolders", [".venv","venv", "envs", ".envs"])
 endif
 
+if g:HasCocPlug('coc-go')
+  let g:go_def_mode = 'gopls'
+  let g:go_info_mode = 'gopls'
+  call coc#config("go.goplsPath", $HOME . '/.asdf/shims/gopls')
+  autocmd FileType go nmap gtj :CocCommand go.tags.add json<cr>
+  autocmd FileType go nmap gty :CocCommand go.tags.add yaml<cr>
+  autocmd FileType go nmap gtx :CocCommand go.tags.clear<cr>
+  autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+endif
+
+let g:trigger_size = 0.5 * 1048576
+
+augroup hugefile
+  autocmd!
+  autocmd BufReadPre *
+        \ let size = getfsize(expand('<afile>')) |
+        \ if (size > g:trigger_size) || (size == -2) |
+        \   echohl WarningMsg | echomsg 'WARNING: altering options for this huge file!' | echohl None |
+        \   exec 'CocDisable' |
+        \ else |
+        \   exec 'CocEnable' |
+        \ endif |
+        \ unlet size
+augroup END

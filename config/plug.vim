@@ -154,11 +154,12 @@ Plug 'makerj/vim-pdf', {'for': 'pdf'}
 " plug 'skywind3000/asynctasks.vim', {'on': ['asynctask','asynctaskedit','asynctasklist','asynctaskmarco', 'asynctaskprofile']}
 " plug 'skywind3000/asyncrun.vim', {'on': ['asyncrun', 'asyncstop']}
 " 语法高亮包，使用treesitter代替
-" if has('nvim')
-  " Plug 'nvim-treesitter/nvim-treesitter'
-" else
-Plug 'sheerun/vim-polyglot'
-" endif
+if has('nvim') && !has('gui_vimr')
+  Plug 'nvim-treesitter/nvim-treesitter'
+else
+" elseif !has('gui_vimr')
+  Plug 'sheerun/vim-polyglot'
+endif
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'sohunjug/syncfile.vim'
 " Plug 'paroxayte/vwm.vim'
@@ -170,6 +171,7 @@ Plug 'valloric/MatchTagAlways', {'for': ['html', 'css', 'xml']}
 " else
   Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
 " endif
+Plug 'fatih/vim-go'
 " 加强版的 go to file
 Plug 'tpope/vim-apathy'
 " 查看启动时间
@@ -202,6 +204,7 @@ let g:coc_global_extensions = [
       \ 'coc-sh',
       \ 'coc-yaml',
       \ 'coc-git',
+      \ 'coc-gitignore',
       \ 'coc-cmake',
       \ 'coc-snippets',
       \ 'coc-pairs',
@@ -212,14 +215,15 @@ let g:coc_global_extensions = [
       \ 'coc-word',
       \ 'coc-rust-analyzer',
       \ 'coc-python',
+      "\ 'coc-pyright',
       "\ 'coc-rls',
       \ 'coc-markmap',
       "\ 'coc-sql',
       \ 'coc-lua',
       \ 'coc-java',
       \ 'coc-fzf-preview',
-      \ 'coc-bookmark',
       \ 'coc-go',
+      \ 'coc-tabnine',
       \ ]
 
       "\ 'coc-pyright',
@@ -228,6 +232,5 @@ let g:coc_global_extensions = [
 " \ 'coc-lists',
 " \ 'coc-java',
 " \ 'coc-go',
-      "\ 'coc-tabnine',
 
 " vim:set et sw=2:

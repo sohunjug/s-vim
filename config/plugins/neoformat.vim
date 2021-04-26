@@ -6,7 +6,16 @@ let g:neoformat_python_black = {
       \ 'args': ['-q', '-'],
       \ }
 
-let g:neoformat_enabled_lua = ['luafmt']
+let g:neoformat_enabled_lua = ['luaformatter']
+let g:neoformat_lua_luaformatter = {
+      \ 'exe': '/usr/local/bin/lua-format',
+      \ 'stdin': 0,
+      \ 'args': ['--column-limit=140', '--continuation-indent-width=2', '--tab-width=2', '--indent-width=2', '--column-table-limit=80',
+      \          '--keep-simple-control-block-one-line', '--keep-simple-function-one-line', '--align-args', '--no-break-after-functioncall-lp', '--align-parameter',
+      \          '--chop-down-parameter', '--no-break-after-functiondef-lp', '--no-break-before-functiondef-rp', '--align-table-field', '--break-after-table-lb',
+      \          '--break-before-table-rb', '--chop-down-table', '--chop-down-kv-table', '--extra-sep-at-table-end', '--no-break-after-operator', '--no-break-before-functioncall-rp'
+      \         ],
+      \ }
 let g:neoformat_lua_luafmt = {
       \ 'exe': '/usr/local/bin/luafmt',
       \ 'stdin': 1,
